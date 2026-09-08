@@ -19,6 +19,8 @@ void test1()
     std::cout<<static_cast<char>(65)<<std::endl;
 }
 
+//如果父类中没有Cat_Say方法则会内存越界，这种父类转子类则就是不安全的，如
+//果能正常运行纯属运气原因(内存结构的关键区域还没有被修改，从而未导致崩溃)
 void test2()
 {
     animal a1;
@@ -47,6 +49,8 @@ void test2()
     animal& a_y=c1;
     a_y.Animal_Say();
     static_cast<cat&>(a_y).Cat_Say();
+
+    //子类转父类是安全行为
 }
 
 int main()
