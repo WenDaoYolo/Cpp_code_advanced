@@ -45,6 +45,7 @@ void test2()
         std::cout<<"cast success"<<std::endl;
 }
 
+//实际类型：animal& -> cat& ->转换失败
 void test3()
 {
     animal a1;
