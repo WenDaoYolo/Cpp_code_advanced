@@ -4,6 +4,8 @@ int devide(int x,int y)
 {
     if(y==0)
         throw y;
+    if(x>100000)       //如果除数太大，则将其抛出
+        throw x;
     return y;
 }
 
@@ -12,7 +14,8 @@ void test1()
     try
     {
         int res=devide(3,0);
-        std::cout<<"res:"<<res<<std::endl;
+        int res2=devide(100000000,3);
+        std::cout<<"res:"<<std::endl;
     }
     catch(int exception_1)
     {
@@ -52,7 +55,7 @@ void test2()
 int main()
 {
     test1();
-    test2();
+    //test2();
 
     return 0;
 }
